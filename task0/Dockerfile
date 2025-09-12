@@ -16,4 +16,4 @@ RUN apt-get upgrade -y
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # sets the default command to echo "Hello, World!"
-CMD ["Hello, World!"]
+CMD ["echo","Hello, World!"]
