@@ -1,0 +1,25 @@
+
+version: '3.8'
+
+services:
+  back-end:
+    build: ./back-end
+    # Remove port mapping to avoid conflicts when scaling
+    container_name: softy-pinko-backend
+    
+  front-end:
+    build: ./front-end
+    ports:
+      - "9000:9000"
+    container_name: softy-pinko-frontend
+    depends_on:
+      - back-end
+
+  proxy:
+    build: ./proxy
+    ports:
+      - "80:80"
+    container_name: softy-pinko-proxy
+    depends_on:
+      - front-end
+      - back-end
