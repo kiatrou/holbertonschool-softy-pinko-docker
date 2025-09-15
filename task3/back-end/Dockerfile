@@ -14,7 +14,7 @@ RUN apt-get upgrade -y
 RUN apt-get install python3 && \
 apt-get install python3-pip
 
-RUN pip install --break-system-packages flask
+RUN pip install --break-system-packages flask flask-cors
 
 RUN mkdir -p /app
 
